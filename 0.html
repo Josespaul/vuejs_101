@@ -1,0 +1,36 @@
+<!-- Getting Started -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="vue.js">
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center>
+    <div id="app">
+    <center>{{msg1}} </center>
+     <center><div v-on:click="show" style="cursor: pointer"> {{ msg2 }} </div></center>
+        <center><div v-if="show_status" style="font-size: 4vh"> {{ msg3 }} </div></center>
+        <center><div class="footer">Joses Paul<br>Zilogic Systems</div></center>
+    </div>
+        </center>
+    <script>
+        new Vue({ // Vue Instance 
+            el: "#app", // element to mount in the DOM.
+            data: {
+                msg1: " Welcome",
+                msg2: "VueJS 101",
+                msg3: "Basics of Introduction to Getting started with Vuejs",
+                show_status: false,
+            },
+            methods: {
+                show() {
+                    this.show_status = !this.show_status;
+                },
+            }
+        });
+    </script>
+</body>
+</html>

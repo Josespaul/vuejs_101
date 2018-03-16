@@ -1,0 +1,23 @@
+<!-- Getting Started -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="vue.js">
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" v-on:click="change">
+        {{ msg }}
+    </div>
+    <script>
+        new Vue({ // Vue Instance 
+            el: "#app", // element to mount in the DOM.
+            data: {
+                msg: "Hello World!"
+            },
+        });
+    </script>
+</body>
+</html>
