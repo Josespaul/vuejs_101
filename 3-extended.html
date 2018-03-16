@@ -1,0 +1,30 @@
+<!-- We Really Love Angular -->
+
+<!DOCTYPE html>
+<html>
+<head>    
+    <script
+      src="vue.js">
+    </script>
+    <link rel="stylesheet" href="style.css">
+    </head>
+  <body>
+    <div id="app">
+      <p v-on:click="change">  {{ msg }} </p>
+      <input v-model="msg"> <!-- v-model makes two-way binding   (Angular :D) -->
+        </div>
+      <script>
+    new Vue({
+        el: "#app",
+        data: {
+            msg: "Hello World!",
+          },
+        methods: {
+            change() { 
+                this.msg = "Change by Vuejs"
+            }, 
+        },
+    });
+    </script>
+  </body>
+</html>

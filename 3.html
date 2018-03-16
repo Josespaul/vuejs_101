@@ -1,0 +1,28 @@
+<!-- We love Angular & React -->
+<!-- IMAGE -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="vue.js">
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+         {{ msg }}  <!-- Angular(ng-model)-->
+        <input v-model="msg">
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                msg: "Hello World!",
+            },
+        });
+    </script>
+</body>
+
+</html>
