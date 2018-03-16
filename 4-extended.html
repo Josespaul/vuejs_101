@@ -1,0 +1,31 @@
+<!-- (if) Conditional Rendering  -->
+
+<!DOCTYPE html>
+<html>
+<head>    
+    <script
+      src="vue.js">
+    </script>
+    <link rel="stylesheet" href="style.css">
+    </head>
+  <body style="background-color: #217599">
+      <div id="app">
+    <img v-if="page" src="1.png"  v-on:click="change">
+    <img v-if="!page" src="2.png" v-on:click="change">
+          </div>
+      <script>
+    new Vue({
+        el: "#app",  //element to mount in the DOM.
+        data: {
+            msg: "Hello World!",
+            page: true,
+          },
+        methods: {
+            change() {
+              this.page = !this.page  
+            },
+        }
+    });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!--  VirtualDom - React -->
+
+<!DOCTYPE html>
+ <html>
+<head>
+    <script src="vue.js">
+    
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+            <!-- Vue is reactive -->
+            {{ msg }}
+        <button v-on:click="change"> update </button>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                msg: "Vuejs VDom",
+            },
+            updated() {
+                alert("DOM Updated")
+            },
+            methods: {
+                change() {
+                    alert("VUEJS: Update msg")
+                    this.msg = "Hello from the other Side"
+                    },
+                },
+        });
+    </script>
+</body>
+</html>

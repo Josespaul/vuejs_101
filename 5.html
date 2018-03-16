@@ -1,0 +1,26 @@
+<!-- List Rendering  -->
+
+<!DOCTYPE html>
+<html>
+<head>    
+    <script
+      src="vue.js">
+    </script>
+    <link rel="stylesheet" href="style.css">
+    </head>
+  <body>
+    <div id="app">
+        <ul>
+            <li v-for="name in name_list"> {{ name }} </li>
+        </ul>
+    </div>
+      <script>
+    new Vue({
+        el: "#app",
+        data: {
+            name_list: [ 'Gigi', 'Zyan', 'Poots', 'Harper', 'Kevin'],
+          },
+    });
+    </script>
+  </body>
+</html>

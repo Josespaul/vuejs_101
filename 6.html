@@ -1,0 +1,74 @@
+<!--  Lifecycle Hooks -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div v-on:click="change">
+            <!-- Vue is reactive -->
+            {{ msg }}
+        </div>
+        <button v-on:click="kill"> Destory </button>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                msg: "Vuejs Lifecycle",
+                bye_msg: "Goodbye World!",
+                hello_msg: "Hello World!"
+            },
+            beforeCreate() {
+                alert("BEFORE CREATE")
+            },
+            async created() {
+                alert("CREATED")
+            },
+            /* Invoked after Vue has compiled the template and 
+               updated the virtual DOM.*/
+            beforeMount() {
+                alert("Before Mount")
+            },
+            /* el '#app' in mounted. (Manual Mount - vue.$mount('#app') ) */
+            mounted() {  
+                alert("Mounted")
+            },
+            
+            beforeUpdate() {
+                console.log("BEFORE UPDATE")
+                //alert("Before Update")
+            },
+            updated() {
+                console.log("UPDATED")
+                //alert("Updated")  
+            },
+            beforeDestroy() {
+                alert("Before Destory")
+            },
+            destroyed() {
+                alert("DESTROYED")
+            },
+
+            methods: {
+                change() {
+                    if (this.msg == this.hello_msg) {
+                        this.msg = this.bye_msg
+                    } else if (this.msg == this.bye_msg) {
+                        this.msg = this.hello_msg
+                    } else {
+                        this.msg = this.hello_msg
+                    }
+
+                },
+                kill() {
+                    this.$destroy(true);
+                },
+            },
+        });
+    </script>
+</body>
+</html>

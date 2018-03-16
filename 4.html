@@ -1,0 +1,25 @@
+<!-- (if) Conditional Rendering  -->
+
+<!DOCTYPE html>
+<html>
+<head>    
+    <script
+      src="vue.js">
+    </script>
+    <link rel="stylesheet" href="style.css">
+    </head>
+  <body>
+    <div v-if="page" id="app" v-on:click="change">
+      {{ msg }}
+    </div>
+      <script>
+    new Vue({
+        el: "#app",  //element to mount in the DOM.
+        data: {
+            msg: "Hello World!",
+            page: true,
+          },
+    });
+    </script>
+  </body>
+</html>
